@@ -23,7 +23,7 @@ export default defineConfig({
       ],
     }),
   ],
-  base:'/academic-project-page-template-vue',
+  base:'/POEF-Homepage',
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
