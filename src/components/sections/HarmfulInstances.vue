@@ -326,7 +326,8 @@ export default {
     },
     async loadInstances() {
       try {
-        const response = await fetch('/harmful-behavior/harmful_instances.json')
+        const base = import.meta.env.BASE_URL
+        const response = await fetch(`${base}harmful-behavior/harmful_instances.json`)
         this.instances = await response.json()
         this.filteredInstances = [...this.instances]
         this.updateAvailableInstances()
@@ -405,7 +406,8 @@ export default {
     
     getVideoPath(instruction) {
       const filename = this.getFilename(instruction)
-      return `/harmful-behavior/video/${filename}.mp4`
+      const base = import.meta.env.BASE_URL
+      return `${base}harmful-behavior/video/${filename}.mp4`
     },
     
     getVideoPoster(instruction) {
