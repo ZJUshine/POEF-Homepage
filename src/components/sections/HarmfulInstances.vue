@@ -326,7 +326,7 @@ export default {
     },
     async loadInstances() {
       try {
-        const response = await fetch('/harmful-rlbench/harmful_instances.json')
+        const response = await fetch('/harmful-behavior/harmful_instances.json')
         this.instances = await response.json()
         this.filteredInstances = [...this.instances]
         this.updateAvailableInstances()
@@ -405,7 +405,7 @@ export default {
     
     getVideoPath(instruction) {
       const filename = this.getFilename(instruction)
-      return `/harmful-rlbench/video/${filename}.mp4`
+      return `/harmful-behavior/video/${filename}.mp4`
     },
     
     getVideoPoster(instruction) {
